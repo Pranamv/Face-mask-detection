@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="video-section">
+  <div class="video-card">
+    <div class="card-header gradient-3">
+      <div class="card-icon">🎥</div>
+      <h2>{{ 'Live Camera' if src == 'live' else 'Video Playback' }}</h2>
+    </div>
+    <div class="card-body">
+      <div class="player-wrapper">
+        <img id="stream" class="player" src="{{ url_for('video_feed', src=src, path=video_path) }}" alt="Video stream" />
+      </div>
+      {% if src == 'file' %}
+      <p class="hint">Playing: {{ video_path }}</p>
+      {% endif %}
+      <div class="actions">
+        <a class="btn" href="{{ url_for('index') }}">⬅ Back</a>
+        {% if src == 'live' %}
+        <button id="capture-toggle-btn" class="btn accent" type="button">Start Capturing (No-Mask)</button>
+        {% endif %}
+      </div>
+      {% if src == 'live' %}
+      <div id="capture-status" class="hint" style="margin-top:8px;">Not capturing</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

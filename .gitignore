@@ -1,0 +1,8 @@
+﻿# Large model and media files
+model.safetensors
+*.mp4
+Sample/
+uploads/
+*.png
+*.jpg
+*.jpeg

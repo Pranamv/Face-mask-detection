@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="headline">Real‑time Face Mask Detection</h1>
+    <p class="subhead">Detect masks on images, videos, or through your live camera with a smooth, modern interface.</p>
+  </div>
+</section>
+
+<section class="cards">
+  <div class="card">
+    <div class="card-header gradient-1">
+      <div class="card-icon">🖼️</div>
+      <h2>Image Upload</h2>
+    </div>
+    <div class="card-body">
+      <form id="image-form" action="{{ url_for('predict_image') }}" method="POST" enctype="multipart/form-data">
+        <label class="file-input">
+          <input type="file" name="image" accept="image/*" required>
+          <span>Select an image...</span>
+        </label>
+        <button class="btn tiny clear-file hidden" type="button" aria-label="Clear selected image">✕</button>
+        <button class="btn primary" type="submit">Analyze Image</button>
+      </form>
+      <div id="image-result" class="result hidden"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header gradient-2">
+      <div class="card-icon">🎬</div>
+      <h2>Video Upload</h2>
+    </div>
+    <div class="card-body">
+      <form id="video-form" action="{{ url_for('upload_video') }}" method="POST" enctype="multipart/form-data">
+        <label class="file-input">
+          <input type="file" name="video" accept="video/*" required>
+          <span>Select a video...</span>
+        </label>
+        <button class="btn tiny clear-file hidden" type="button" aria-label="Clear selected video">✕</button>
+        <button class="btn secondary" type="submit">Process Video</button>
+      </form>
+      <p class="hint">After upload, you'll be redirected to the streaming page.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header gradient-3">
+      <div class="card-icon">📷</div>
+      <h2>Live Camera</h2>
+    </div>
+    <div class="card-body">
+      <p>Start the live camera stream and see detections in real‑time.</p>
+      <a class="btn accent" href="{{ url_for('video', src='live') }}">Start Live Stream</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
