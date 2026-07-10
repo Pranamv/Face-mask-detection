@@ -4,7 +4,7 @@ A Flask-based web application for real-time face mask detection using Vision Tra
 
 ## Features
 
-- Real-time face mask detection through webcam
+- Real-time face mask detection through web cam
 - Image upload and processing
 - Face detection and classification
 - Web-based interface with live video streaming
