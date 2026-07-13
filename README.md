@@ -1,6 +1,6 @@
 # Face Mask Detection
 
-A Flask-based web application for real-time face mask detection using Vision Transformer (ViT) model..
+A Flask-based web application for real-time face mask detection using Vision Transformer (ViT) model.
 
 ## Features
 
