@@ -64,3 +64,7 @@ Face mask detection/
 - **Base Model**: google/vit-base-patch16-224-in21k
 - **Task**: Image Classification (Mask vs No Mask)
 - **Input Size**: 224x224 pixels
+
+
+
+Pranam Vijendra Patel
